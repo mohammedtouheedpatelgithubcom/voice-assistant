@@ -3,7 +3,7 @@
 #pipwin install pyaudio for audio list
 import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
-import datetime
+import datetime #For finding time  
 import wikipedia #pip install wikipedia
 import webbrowser
 import os
@@ -13,12 +13,12 @@ engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 #print(voices[1].id)#for male version
 engine.setProperty('voice', voices[0].id)#female version check by just printing
-
+#function speak() so text is  converted to audio and we hear audio from speaker
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-
+#wishes us according to time 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
@@ -28,8 +28,6 @@ def wishMe():
     elif hour>=12 and hour<18:
         print("Good Afternoon !")
         speak("Good Afternoon !")
-
-
 
     else:
         print("Good Evening !")
@@ -52,7 +50,7 @@ def wishMe():
     speak("i can send emails to your friends, can search something on wikipedia")
     speak("play music, can open stackoverflow.com and can go back to sleep when you ask me to shut down")
     speak("THIS IS JARVIS SIR, LET ME KNOW HOW MAY I HELP YOU")
-
+#function to take command from user 
 def takeCommand():
     #It takes microphone input from the user and returns string output
 
@@ -73,13 +71,13 @@ def takeCommand():
         speak('Sorry can you Say that again please.....')
         return "None"
     return query
-
+#function to send emails
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('mdtouheedpatel786@gmail.com' or 'nishanth.tekken15gmail.com', 'your-password')
-    server.sendmail('mdtouheedpatel786@gmail.com' or 'nishanth.tekken15@gmail.com', to, content)
+    server.login('xyz@gmail.com' or 'abc@gmail.com', 'your-password')
+    server.sendmail('xyz@gmail.com' or 'abc@gmail.com', to, content)
     server.close()
 
 if __name__ == "__main__":
@@ -129,7 +127,7 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "mdtouheedpatel786@gmail.com"
+                to = "xyz@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
