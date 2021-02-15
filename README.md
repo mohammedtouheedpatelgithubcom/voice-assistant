@@ -7,7 +7,7 @@ A project implementing python advanced libraries like speech Recognition , Wikip
 # for any problem while compiling please message me or search your query on internet
 # @author of code date:24/06/2020
 # mohammed touheed patel
-# roll no: 1601-19-737-098
+# 
 # IT-2 SEM-2 
 # CBIT  hyderabad
 #project title jarvis-an AI bot which can be enhanced much more
